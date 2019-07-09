@@ -1,2 +1,2 @@
-# humhub-template-modules
+# HumHub Template Module
 WIP
