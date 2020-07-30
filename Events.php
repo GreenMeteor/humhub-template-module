@@ -10,7 +10,7 @@ class Events
     /**
      * Defines what to do when the top menu is initialized.
      *
-     * @param $event
+     * @param Events $event
      */
     public static function onTopMenuInit($event)
     {
@@ -26,7 +26,7 @@ class Events
     /**
      * Defines what to do if admin menu is initialized.
      *
-     * @param $event
+     * @param Events $event
      */
     public static function onAdminMenuInit($event)
     {
