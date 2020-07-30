@@ -5,10 +5,11 @@ namespace humhub\humhub\modules\template;
 use Yii;
 use yii\helpers\Url;
 use humhub\modules\content\components\ContentContainerActiveRecord;
+use humhub\modules\content\components\ContentContainerModule;
 use humhub\modules\space\models\Space;
 use humhub\modules\user\models\User;
 
-class Module extends \humhub\modules\content\components\ContentContainerModule
+class Module extends ContentContainerModule
 {
     /**
     * @inheritdoc
