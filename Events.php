@@ -4,6 +4,7 @@ namespace  humhub\humhub\modules\template;
 
 use Yii;
 use yii\helpers\Url;
+use humhub\modules\ui\menu\MenuLink;
 
 class Events
 {
@@ -14,13 +15,15 @@ class Events
      */
     public static function onTopMenuInit($event)
     {
-        $event->sender->addItem([
+        $menu = $event->sender;
+
+        $menu->addEntry(new MenuLink([
             'label' => 'Template',
-            'icon' => '<i class="fa fa-exclamation-triangle"></i>',
+            'icon' => 'fa-exclamation-triangle',
             'url' => Url::to(['/template/index']),
             'sortOrder' => 99999,
-            'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'template' && Yii::$app->controller->id == 'index'),
-        ]);
+            'isActive' => MenuLink::isActiveState('template'),
+        ]));
     }
 
     /**
@@ -30,13 +33,15 @@ class Events
      */
     public static function onAdminMenuInit($event)
     {
-        $event->sender->addItem([
+        $menu = $event->sender;
+
+        $menu->addEntry(new MenuLink([
             'label' => 'Template',
             'url' => Url::to(['/template/admin']),
             'group' => 'manage',
-            'icon' => '<i class="fa fa-exclamation-triangle"></i>',
-            'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'template' && Yii::$app->controller->id == 'admin'),
+            'icon' => 'fa-exclamation-triangle',
+            'isActive' => MenuLink::isActiveState('template'),
             'sortOrder' => 99999,
-        ]);
+        ]));
     }
 }
